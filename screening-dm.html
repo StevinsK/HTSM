@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diabetes Screening System</title>
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow-y: auto;
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    margin-top: auto;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#health-messages {
+    margin-top: 10px;
+}
+
+
+
+</style>
+</head>
+<body>
+    <div class="container">
+        <p>1. Enter your age, weight, and blood glucose level.</p>
+        <p>2. Click on the "Calculate" button to see your screening result.</p>
+        <p>3. Follow the provided health messages for your risk category.</p>
+        <p>4. input at least 3 fields for a valid diagnosis of which, random sugars and the 2-hr glucose challenge, one is required.</p>
+    </div>
+    
+
+
+<div class="container">
+    <h1>Diabetes Screening System</h1>
+    <fieldset>
+    <form action="#">
+    <div class="form-group">
+<label for="age">Age</label>
+        <input type="number" id="age" name="age" required>
+    </div>
+    <div class="form-group">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" name="weight" required>
+    </div>
+    <div class="form-group">
+        <label for="glucose">Random Blood Glucose Level (mg/dL):</label>
+        <input type="number" id="glucose" name="glucose" step="any" required>
+    </div>
+    <div class="form-group">
+        <label for="FPG">Fasting Plasma Glucose Level (mg/dL):defined as no consumption of food or beverage other than water for atleast 8 hrs</label>
+        <input type="number" id="FPG" name="FPG" step="any" required>
+    </div>
+    <div class="form-group">
+        <label for="OGTT">2-hr plasma Glucose (mg/dL):defined as glucose challenge after 75g glucose dissolved in water. And is not a must requirement</label>
+        <input type="number" id="OGTT" name="OGTT" step="any">
+    </div>
+    <div class="form-group">
+        <label for="HgbA1C">HgbA1C:</label>
+        <input type="number" id="HgbA1C" name="HgbA1C" step="any" required>
+    </div>
+    <div class="form-group">
+        <label for="Classic Symptoms">Classic Symptoms of DM: Include any or all 3Ps</label>
+        <label for="Yes"> <input type="radio" name="Symptoms" id="Yes">Yes </label>
+        <label for="No"><input type="radio" name="Symptoms" id="No">No</label>
+    </div>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <div id="result"></div>
+    <div id="health-messages"></div>
+</div>
+</form>
+</fieldset>
+</div>
+<script>
+function calculate() {
+    const age = parseInt(document.getElementById('age').value);
+    const weight = parseFloat(document.getElementById('weight').value);
+    const glucose = parseFloat(document.getElementById('glucose').value);
+
+    let message = '';
+    let result = '';
+if (age === null){result= 'Please enter age';
+}
+else if(weight === null){result='Please enter weight';}
+else if (glucose === null){result='please enter your glucose levels';}
+    else if (age > 45 || weight > 25 || glucose > 126) {
+        result = 'High Risk: You should consult a healthcare professional for further evaluation.';
+        message = 'Follow a healthy diet, exercise regularly, and monitor your blood glucose levels.';
+    } else {
+        result = 'Low Risk: Continue to maintain a healthy lifestyle.';
+        message = 'Eat a balanced diet, exercise regularly, and monitor your health regularly.';
+    }
+    document.getElementById('result').innerText = result;
+    document.getElementById('health-messages').innerText = message;
+}
+
+</script>
+</body>
+</html>

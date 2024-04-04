@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Accounts - AfyaBank</title>
+<style>
+    /* Your CSS styles here */
+body {
+font-family: Arial, sans-serif;
+margin: 0;
+padding: 0;
+background-color: #bfd5bc;
+}
+header {
+background-color: #aa8888;
+color: #fff;
+padding: 10px 20px;
+text-align: center;
+}
+nav ul {
+list-style-type: none;
+}
+nav ul li {
+display: inline-block;
+margin-right: 20px;
+}
+nav ul li a {
+color: #fff;
+text-decoration: none;
+font-weight: bold;
+transition: color 0.3s;
+}
+nav ul li a:hover {
+color: #ff6f61;
+}
+main {
+padding: 20px;
+}
+section {
+margin-bottom: 20px;
+padding: 20px;
+background-color: #f9f9f9;
+border-radius: 5px;
+box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+button {
+padding: 10px 20px;
+background-color: #333;
+color: #fff;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin-right: 10px;
+}
+button:hover {
+background-color: #ff6f61;
+}
+footer {
+text-align: center;
+padding: 10px 0;
+background-color: #333;
+color: #fff;
+position: fixed;
+bottom: 0;
+left: 0;
+width: 100%;
+}
+
+</style>
+</head>
+<body>
+<header>
+<h1>AfyaBank</h1>
+<nav>
+<ul>
+<li><a href="afyaBank2.html">Home</a></li>
+<li><a href="#">Transactions</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<section id="accountSummary">
+<h2>Account Summary</h2>
+<div id="balance">Balance: Ksh0.00</div>
+<div id="recentTransactions">
+<h3>Recent Transactions</h3>
+<ul id="transactionsList">
+<li>No transactions yet.</li>
+</ul>
+</div>
+</section>
+<section id="manageTransactions">
+<h2>Manage Transactions</h2>
+<button id="viewTransactions">View Transactions</button>
+<button id="makeTransfer">Make Transfer</button>
+<button id="manageRecurringPayments">Manage Recurring Payments</button>
+</section>
+<section id="accountSettings">
+<h2>Account Settings</h2>
+<button id="personalInfo">Personal Information</button>
+<button id="securitySettings">Security Settings</button>
+<button id="notificationPreferences">Notification Preferences</button>
+</section>
+<section id="customerSupport">
+<h2>Customer Support</h2>
+<button id="contactSupport">Contact Support</button>
+</section>
+</main>
+<footer>
+<p>&copy; 2024 AfyaBank. All rights reserved.</p>
+</footer>
+<button onclick="printPage()" id="print">Print</button>
+<script>
+    // Your JavaScript code here
+function printPage() {
+window.print();
+}
+
+document.getElementById('viewTransactions').addEventListener('click', function() {
+// Simulate fetching recent transactions from server
+const transactions = ['Transaction 1', 'Transaction 2', 'Transaction 3'];
+const transactionsList = document.getElementById('transactionsList');
+transactionsList.innerHTML = '';
+transactions.forEach(function(transaction) {
+const li = document.createElement('li');
+li.textContent = transaction;
+transactionsList.appendChild(li);
+});
+});
+
+// Simulate updating balance
+let balance = 0;
+document.getElementById('balance').textContent = 'Balance: Ksh' + balance.toFixed(2);
+
+document.getElementById('makeTransfer').addEventListener('click', function() {
+// Implement make transfer functionality
+alert('Make transfer functionality not implemented yet.');
+});
+
+document.getElementById('manageRecurringPayments').addEventListener('click', function() {
+// Implement manage recurring payments functionality
+alert('Manage recurring payments functionality not implemented yet.');
+});
+
+document.getElementById('personalInfo').addEventListener('click', function() {
+// Implement personal information settings
+alert('Personal information settings not implemented yet.');
+});
+
+document.getElementById('securitySettings').addEventListener('click', function() {
+// Implement security settings
+alert('Security settings not implemented yet.');
+});
+
+document.getElementById('notificationPreferences').addEventListener('click', function() {
+// Implement notification preferences
+alert('Notification preferences not implemented yet.');
+});
+
+document.getElementById('contactSupport').addEventListener('click', function() {
+// Implement contact support
+alert('Contact support not implemented yet.');
+});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Record Diabetes Health Metrics</title>
+<link rel="stylesheet" href="diabetis.css">
+</head>
+<body>
+<header>
+  <h1>Record Diabetes Health Metrics</h1>
+</header>
+<main>
+  <form id="health-metrics-form">
+    <label for="weight">Weight (kg):</label>
+    <input type="number" id="weight" name="weight" required>
+    
+    <label for="blood-pressure-systole">Systolic Blood Pressure (mmHg):</label>
+    <input type="number" id="blood-pressure-systole" name="Systolic-blood-pressure" required>
+
+    <label for="blood-pressure-diastole">Diastolic Blood Pressure (mmHg):</label>
+    <input type="number" id="blood-pressure-diastole" name="Diastolic-blood-pressure" required>
+    
+    <label for="heart-rate">Heart Rate (bpm):</label>
+    <input type="number" id="heart-rate" name="heart-rate" required>
+    
+    <label for="exercise-routines">Exercise Routines (type, how long?):</label>
+    <textarea id="exercise-routines" name="exercise-routines" rows="3" placeholder="Please note down the type of exercise include tasks, and for how long"></textarea>
+    
+    <label for="medications">Medications Taken:</label>
+    <input type="text" id="medications" name="medications" placeholder="Also include the dosages" required>
+   
+    <label for="blood-glucose-level">Blood Glucose Level (mmol/L):</label>
+<input type="number" id="blood-glucose-level" name="blood-glucose-level-whole" required>
+<select id="blood-glucose-decimal" name="blood-glucose-decimal">
+  <option value="0">.0</option>
+  <option value="0.1">.1</option>
+  <option value="0.2">.2</option>
+  <option value="0.3">.3</option>
+  <option value="0.4">.4</option>
+  <option value="0.5">.5</option>
+  <option value="0.6">.6</option>
+  <option value="0.7">.7</option>
+  <option value="0.8">.8</option>
+  <option value="0.9">.9</option>
+</select>
+
+    <label for="symptoms">Any symptoms?:</label>
+    <textarea id="symptoms" name="symptoms" rows="3" placeholder="Please note down any symptoms you feel now, and for how long"></textarea>
+    
+    <label for="datetime">Date and Time:</label>
+    <input type="datetime-local" id="datetime" name="datetime" required>
+    
+    <button type="submit" id="Submit">Submit</button>
+  </form>
+</main>
+<footer>
+  <p>© 2024 HTMS. All rights reserved.</p>
+</footer>
+</body>
+</html>

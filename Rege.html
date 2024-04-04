@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTMS Registration</title>
+    <style>
+        body {
+            background-color: rgb(219, 201, 236);
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 40px;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="date"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        legend {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body onload="setFormDefaults();">
+    <h1>Welcome To Health Tracking And Monitoring System</h1>
+    <form method="post"action="rege.php"name="regeForm">
+        <fieldset>
+            <legend>Basic inputs</legend>
+            <div>
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" placeholder="First Name" required>
+            </div>
+            <div>
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" placeholder="Last Name" required>
+            </div>
+            <div>
+                <label for="othernames">Other Name:</label>
+                <input type="text" name="othernames" placeholder="Other Name">
+            </div>
+            <div>
+                <label for="email">Your E-mail:</label>
+                <input type="email" name="email" placeholder="Your Email" required>
+            </div>
+            <div>
+                <label for="dateOfBirth">Date of Birth:</label>
+                <input type="date" name="dateOfBirth" value="2024-02-14" required>
+            </div>
+
+            <div>
+                <label for="countyOfResidence">County of Residence:</label>
+                <input type="text" name="countyOfResidence" placeholder="My County Of Residence Is..." required>
+            </div>
+
+            <div style="margin-bottom: 8px;">
+                <label for="phoneNumber">Phone Number:</label>
+                <input type="tel" name="phoneNumber" pattern="[0-9]{4}[0-9]{3}[0-9]{3}"
+                required>
+            </div>
+            <div><p>After submision, wait for confirmation email, then <a href="login-page2.html">click here</a> to login page</p></div>
+
+
+            <button type="submit" id="submitBtn" onclick="submitForm()">Submit For Registration</button>
+            <button type="reset" id="resetBtn" onclick="resetForm()">Clear Form</button>
+        </fieldset>
+    </form>
+<script>
+function setFormDefaults(){
+document.forms.regeForm.method = "post"
+document.forms.regeForm.target="_blank"
+document.forms.regeForm.action=
+  
+
+//register the button events
+
+document.getElementById('submitBtn').addEventListener('click',submitForm);
+document.getElementById('resetBtn').addEventListener('click', resetForm);
+
+function submitForm(){
+    document.form.regeForm.submit();
+}
+function resetForm() {
+document.forms.regeForm.reset();
+
+}
+
+
+}
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>

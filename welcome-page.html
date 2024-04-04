@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>The login-Reg page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    /* Reset default styles */
+    body, html, ul, li {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      background-color: rgb(228, 238, 241);
+    }
+
+    /* Navbar styles */
+    .navbar {
+      background-color: #333;
+      border: wheat;
+      border-radius: 0;
+    }
+
+    .navbar-brand {
+      color: #fff;
+      font-size: 24px;
+      font-weight: bold;
+      padding: 15px 20px;
+      text-decoration: none;
+    }
+
+    .navbar-brand:hover {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .navbar-nav {
+      padding-right: 20px;
+    }
+
+    .navbar-nav > li {
+      float: left;
+    }
+
+    .navbar-nav > li > a {
+      color: #1e0101;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 15px 20px;
+      text-decoration: none;
+    }
+
+    .navbar-nav > li > a:hover {
+      color: #5e3c3c;
+      text-decoration: underline;
+    }
+
+    /* Right-aligned nav items */
+    .navbar-right {
+      float: right;
+      color: black;
+    }
+
+    /* Icons */
+    .glyphicon {
+      margin-right: 5px;
+      font-size: 60px;
+    }
+
+    /* Container styles */
+    .container {
+      padding: 20px;
+    }
+
+    /* Additional styles */
+    h3 {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    p {
+      font-size: 16px;
+    }
+    .image1 {
+        margin-top: 30px;
+      width: 60%;
+      height: 60%;
+      float: left;
+      animation: scaleImage 2s infinite alternate;
+    }
+
+    .image2 {
+      float: right;
+      width: 20%;
+      height: 20%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      animation: rotateImage 4s infinite linear;
+    }
+
+    @keyframes scaleImage {
+      0% {
+        transform: scale(1);
+      }
+      100% {
+        transform: scale(1.1);
+      }
+    }
+
+    @keyframes rotateImage {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Welcome To HTMS</a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="Rege.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="login-page2.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div>
+  <img class="image1" src="health-tracker.jpg" alt="Logo">
+</div>
+<div>
+  <img class="image2" src="images.png">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AfyaPay</title>
+<style>
+/* Use a modern CSS reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #7999ae;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #ff6f61;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+section {
+    width: 45%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6f61;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
+#print{
+/* Add this CSS to center the button */
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto; /* Center the button horizontally */
+}
+
+</style>
+</head>
+<body>
+    <header>
+        <h1>AfyaPay</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Transactions</a></li>
+                <li><a href="#">Account</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="finances">
+            <h2>Total Finances</h2>
+            <div class="total">
+                <span>Total Amount:</span>
+                <span id="totalAmount">Ksh0.00</span>
+            </div>
+        </section>
+        <section class="add-finance">
+            <h2>Total Finances</h2>
+            <form id="addFinanceForm">
+                <label for="donation">Donation Amount:</label>
+                <input type="text"id="donation" name="donation" placeholder="Will update when you refresh your AfyaPay">
+                <label for="userContribution">User Contribution:</label>
+                <input type="text" id="userContribution" name="userContribution" required placeholder="Enter Transaction Code">
+                <button type="submit">Total</button>
+            </form>
+        </section>
+    </main>
+    <button onclick="printPage()" id="print">Print</button>
+
+    <footer>
+
+        <p>&copy; 2024 AfyaPay. All rights reserved.</p>
+    </footer>
+    <script>
+        document.getElementById('addFinanceForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const donationAmount = parseFloat(document.getElementById('donation').value);
+    const userContribution = parseFloat(document.getElementById('userContribution').value);
+    const totalAmountElement = document.getElementById('totalAmount');
+    let totalAmount = parseFloat(totalAmountElement.textContent.slice(3)); // Remove 'Ksh' and convert to number
+
+    // Calculate total amount
+    totalAmount += donationAmount + userContribution;
+
+    // Update total amount on the page
+    totalAmountElement.textContent = 'Ksh ' + totalAmount.toFixed(2); // Include a space after 'Ksh'
+
+    // Reset form fields
+document.getElementById('donation').value = '';
+    document.getElementById('userContribution').value = '';
+    
+});
+
+function printPage() {
+    window.print();
+}
+
+
+    </script>
+</body>
+</html>
